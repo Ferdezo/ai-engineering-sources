@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Engineering: Master or Disaster? Sources</title>
+<meta name="description" content="Research, reports and articles behind the talk AI Engineering: Master or Disaster? by Arkadiusz Migała.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #1c359c;
+    --text: #18213f;
+    --muted: #55607f;
+    --line: #1c359c;
+    --master: #3f8f2a;
+    --disaster: #d9532b;
+    --chip-bg: #eef1fb;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c359c;
+      --ink: #ffffff;
+      --text: #ffffff;
+      --muted: #c9d1f2;
+      --line: #ffffff;
+      --master: #8fd16a;
+      --disaster: #ff8a5c;
+      --chip-bg: #24409f;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Jost", "Futura", "Century Gothic", "Avenir Next", system-ui, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+
+  header h1 {
+    font-weight: 500;
+    font-size: clamp(2.2rem, 7vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0;
+  }
+  header .sub {
+    font-size: clamp(1.1rem, 3.4vw, 1.45rem);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0.35rem 0 0;
+  }
+  .m { color: var(--master); }
+  .d { color: var(--disaster); }
+  header p.intro { color: var(--muted); max-width: 36rem; margin: 1.25rem 0 0; }
+
+  /* The deck's SDLC map, reused as navigation */
+  nav { margin: 2.25rem 0 0.5rem; }
+  nav ul {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem;
+  }
+  nav li.wide { grid-column: 1 / -1; }
+  nav a {
+    display: block; text-align: center;
+    border: 2px solid var(--line); border-radius: 10px;
+    padding: 0.55rem 0.4rem;
+    color: var(--ink); text-decoration: none;
+    font-size: 0.82rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  nav a:hover { background: var(--chip-bg); }
+  nav a:focus-visible, a:focus-visible { outline: 3px solid var(--master); outline-offset: 3px; }
+
+  section { margin-top: 3rem; }
+  section h2 {
+    display: inline-block;
+    border: 2px solid var(--line); border-radius: 10px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.95rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--ink);
+    margin: 0 0 0.4rem;
+  }
+  section > p.why { color: var(--muted); margin: 0.2rem 0 1rem; }
+
+  ol.refs { list-style: none; margin: 0; padding: 0; }
+  ol.refs li { padding: 0.95rem 0; border-top: 1px solid color-mix(in srgb, var(--line) 25%, transparent); }
+  ol.refs li:first-child { border-top: 0; }
+  .t { font-weight: 500; font-size: 1.08rem; }
+  .t a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .t a:hover { text-decoration-thickness: 2px; }
+  .by { color: var(--muted); font-size: 0.95rem; }
+  .use { margin-top: 0.25rem; font-size: 0.97rem; }
+
+  footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 2px solid var(--line); color: var(--muted); font-size: 0.95rem; }
+  footer a { color: var(--ink); }
+
+  @media (max-width: 30rem) {
+    nav ul { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>AI Engineering</h1>
+    <p class="sub"><span class="m">Master</span> or <span class="d">Disaster</span>?</p>
+    <p class="intro">The research, reports and articles behind the talk. Each entry says what it was used for, so you can check the claim yourself.</p>
+  </header>
+
+  <nav aria-label="Sections">
+    <ul>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#bottleneck">Bottleneck</a></li>
+      <li><a href="#quality">Quality</a></li>
+      <li><a href="#design">Req &amp; Design</a></li>
+      <li><a href="#impl">Impl</a></li>
+      <li><a href="#limits">Limits</a></li>
+      <li class="wide"><a href="#control">Control &amp; craft</a></li>
+    </ul>
+  </nav>
+
+  <section id="story">
+    <h2>Story: from C++ to the JVM</h2>
+    <p class="why">Why higher abstraction worked before: the tool kept a promise.</p>
+    <ol class="refs">
+      <li>
+        <div class="t"><a href="https://doi.org/10.1002/(SICI)1097-024X(19990410)29:4%3C345::AID-SPE238%3E3.0.CO;2-C">Comparing observed bug and productivity rates for Java and C++</a></div>
+        <div class="by">Geoffrey Phipps. Software: Practice and Experience 29(4), 1999</div>
+        <div class="use">The real “Mark”: 2–3× more bugs per line in C++, up to 6× longer debugging, 30–200% more code per minute in Java.</div>
+      </li>
+      <li>
+        <div class="t"><a href="https://javapro.io/2025/04/07/hitchhikers-guide-to-java-performance/">Hitchhiker’s Guide to Java Performance</a></div>
+        <div class="by">Ingo Düppe. JAVAPRO, 2025</div>
+        <div class="use">Early JVMs were 10–20× slower than C, then JIT and HotSpot closed the gap.</div>
+      </li>
+      <li>
+        <div class="t"><a href="https://msrc.microsoft.com/blog/2019/07/a-proactive-approach-to-more-secure-code">A proactive approach to more secure code</a></div>
+        <div class="by">Microsoft Security Response Center, 2019</div>
+        <div class="use">About 70% of security fixes in C/C++ code are memory-safety issues, a class of bugs a managed runtime removes.</div>
+      </li>
+      <li>
+        <div class="t"><a href="https://www.ibm.com/history/fortran">Fortran</a></div>
+        <div class="by">IBM History</div>
+        <div class="use">The first big abstraction jump: around 1,000 hand-written instructions became 47 statements.</div>
+      </li>
+      <li>
+        <div class="t">The Mythical Man-Month</div>
+        <div class="by">Frederick P. Brooks. Addison-Wesley, 1975</div>
+        <div class="use">Productivity is roughly constant per statement, and coding is only about a sixth of the schedule.</div>
+      </li>
+      <li>
+        <div class="t"><a href="https://www.cs.utexas.edu/users/EWD/transcriptions/EWD06xx/EWD667.html">On the foolishness of “natural language programming”</a></div>
+        <div class="by">Edsger W. Dijkstra. EWD667</div>
+        <div class="use">Why natural language makes a poor contract with a machine.</div>
+      </li>
+      <li>
+        <div class="t"><a href="https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/">The Law of Leaky Abstractions</a></div>
+        <div class="by">Joel Spolsky, 2002</div>
+        <div class="use">Every abstraction leaks eventually. With an LLM, it leaks by design.</div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="bottleneck">
+    <h2>Bottleneck: the productivity paradox</h2>
+    <p class="why">Faster coding does not mean faster delivery. The slowest link sets the pace.</p>
+    <ol class="refs">
+      <li>
+        <div class="t"><a href="https://research.google/pubs/dora-2025-state-of-ai-assisted-software-development-report/">State of AI-assisted Software Development</a></div>
+        <div class="by">DORA, Google, 2025</div>
+        <div class="use">AI is an amplifier: it magnifies the strengths of good organizations and the dysfunctions of struggling ones.</div>
+      </li>
+      <li>
+        <div class="t"><a href="https://www.faros.ai/ai-productivity-paradox">The AI Productivity Paradox</a></div>
+        <div class="by">Faros AI, 2025</div>
+        <div class="use">Teams with high AI adoption merge far more PRs, but review time almost doubles and PRs get much larger.</div>
+      </li>
+      <li>
+        <div class="t"><a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity</a></div>
+        <div class="by">Becker, Rush, Barnes, Rein. METR, 2025 (<a href="https://arxiv.org/abs/2507.09089">arXiv:2507.09089</a>)</div>
+        <div class="use">Experienced developers were 19% slower with AI while believing they were faster. METR now treats this as a snapshot of early-2025 tools.</div>
+      </li>
+      <li>
+        <div class="t">Validity of the single processor approach to achieving large scale computing capabilities</div>
+        <div class="by">Gene Amdahl. AFIPS, 1967</div>
+        <div class="use">Amdahl’s law: speeding up one stage has a hard ceiling.</div>
+      </li>
+      <li>
+        <div class="t">Reevaluating Amdahl’s Law</div>
+        <div class="by">John L. Gustafson. Communications of the ACM 31(5), 1988</div>
+        <div class="use">Gustafson’s law: with more capacity, we take on bigger problems instead of finishing early.</div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="quality">
+    <h2>Quality and security</h2>
+    <p class="why">More code is not the same as better code.</p>
+    <ol class="refs">
+      <li>
+        <div class="t"><a href="https://www.gitclear.com/ai_assistant_code_quality_2025_research">AI Copilot Code Quality: 2025</a></div>
+        <div class="by">GitClear, 2025</div>
+        <div class="use">211 million changed lines: duplicated blocks up sharply, refactoring (moved code) down to under 10% of changes.</div>
+      </li>
+      <li>
+        <div class="t"><a href="https://www.veracode.com/blog/genai-code-security-report">GenAI Code Security Report</a></div>
+        <div class="by">Veracode, 2025</div>
+        <div class="use">Java had the highest security failure rate among tested languages. Models got better at syntax, not at security.</div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="design">
+    <h2>Requirements &amp; design</h2>
+    <p class="why">Slow down to speed up: the spec is the contract the model doesn’t give you.</p>
+    <ol class="refs">
+      <li>
+        <div class="t"><a href="https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl</a></div>
+        <div class="by">Birgitta Böckeler. martinfowler.com, 2025</div>
+        <div class="use">Three levels: spec-first, spec-anchored, spec-as-source. Also the warning: a spec bigger than the change is a disaster of its own.</div>
+      </li>
+      <li>
+        <div class="t">The New Code</div>
+        <div class="by">Sean Grove. AI Engineer World’s Fair, 2025</div>
+        <div class="use">The talk that put specifications at the center of AI-assisted engineering.</div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="impl">
+    <h2>Implementation</h2>
+    <p class="why">Conventions, tests and loops: constraints the agent can check itself against.</p>
+    <ol class="refs">
+      <li>
+        <div class="t"><a href="https://arxiv.org/abs/2602.11988">Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?</a></div>
+        <div class="by">Gloaguen, Mündler, Müller, Raychev, Vechev. ETH Zurich, 2026</div>
+        <div class="use">Human-written context files help a little, generated ones hurt, and all of them add cost. Write rules from real review comments.</div>
+      </li>
+      <li>
+        <div class="t"><a href="https://arxiv.org/abs/2601.20404">On the Impact of AGENTS.md Files on the Efficiency of AI Coding Agents</a></div>
+        <div class="by">Lulla, Mohsenimofidi, Galster, Zhang, Baltes, Treude, 2026</div>
+        <div class="use">With a human-written AGENTS.md, agents finished faster and used fewer tokens.</div>
+      </li>
+      <li>
+        <div class="t"><a href="https://arxiv.org/abs/2402.13521">Test-Driven Development for Code Generation</a></div>
+        <div class="by">Noble Saji Mathews, Meiyappan Nagappan. ASE 2024</div>
+        <div class="use">Giving the model tests up front solves more problems. Tests inferred from code can lock bugs in.</div>
+      </li>
+      <li>
+        <div class="t"><a href="https://newsletter.pragmaticengineer.com/p/tdd-ai-agents-and-coding-with-kent">TDD, AI agents and coding with Kent Beck</a></div>
+        <div class="by">The Pragmatic Engineer, 2025</div>
+        <div class="use">TDD as a superpower with agents, and agents that delete tests to make them pass.</div>
+      </li>
+      <li>
+        <div class="t"><a href="https://arxiv.org/abs/2501.12862">Mutation-Guided LLM-based Test Generation at Meta</a></div>
+        <div class="by">Meta, 2025</div>
+        <div class="use">LLM-generated mutants and tests on Android Kotlin code, many of which line coverage alone would have missed.</div>
+      </li>
+      <li>
+        <div class="t"><a href="https://ghuntley.com/ralph/">Ralph Wiggum as a “software engineer”</a></div>
+        <div class="by">Geoffrey Huntley, 2025</div>
+        <div class="use">The Ralph loop: fresh context every iteration, one thing per loop, progress kept in files and git.</div>
+      </li>
+      <li>
+        <div class="t"><a href="https://openai.com/index/harness-engineering/">Harness engineering: leveraging Codex in an agent-first world</a></div>
+        <div class="by">Ryan Lopopolo. OpenAI, 2026</div>
+        <div class="use">Around a million lines with no hand-written code. Progress stalled on missing environment capabilities, not on the model.</div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="limits">
+    <h2>Limits</h2>
+    <p class="why">Tokens, sessions and budget are real constraints.</p>
+    <ol class="refs">
+      <li>
+        <div class="t"><a href="https://research.trychroma.com/context-rot">Context Rot: How Increasing Input Tokens Impacts LLM Performance</a></div>
+        <div class="by">Chroma Research, 2025</div>
+        <div class="use">Across 18 models, performance becomes less reliable as input grows. A reason for small changes and fresh sessions.</div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="control">
+    <h2>Control &amp; craft</h2>
+    <p class="why">Staying in control of the system, and staying sharp as an engineer.</p>
+    <ol class="refs">
+      <li>
+        <div class="t">Ironies of Automation</div>
+        <div class="by">Lisanne Bainbridge. Automatica 19(6), 1983</div>
+        <div class="use">Automation leaves humans the hardest tasks while taking away the practice needed to do them.</div>
+      </li>
+      <li>
+        <div class="t"><a href="https://www.anthropic.com/research/AI-assistance-coding-skills">How AI assistance impacts the formation of coding skills</a></div>
+        <div class="by">Judy Hanwen Shen, Alex Tamkin. Anthropic, 2026 (<a href="https://arxiv.org/abs/2601.20245">arXiv:2601.20245</a>)</div>
+        <div class="use">AI users scored 17% lower on understanding, most of all on debugging. Those who asked conceptual questions kept their mastery.</div>
+      </li>
+      <li>
+        <div class="t"><a href="https://www.microsoft.com/en-us/research/?p=1135061">The Impact of Generative AI on Critical Thinking</a></div>
+        <div class="by">Hao-Ping Lee et al. Microsoft Research and Carnegie Mellon, CHI 2025</div>
+        <div class="use">More confidence in AI goes with less critical thinking. More confidence in yourself goes with more.</div>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <p>Talk by Arkadiusz Migała. Find me on <a href="https://github.com/Ferdezo">GitHub</a>.</p>
+  </footer>
+</main>
+</body>
+</html>
